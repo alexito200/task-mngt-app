@@ -13,7 +13,7 @@ TOC:
   will have a Mark Complete button next to it for their convenience. When the user clicks on the Mark Complete button, the program will put a strike-through decoration over the task.
 
   The Task Form Page is a bootstrap card made up of two text boxes and two buttons. The first text box is for the task title and the second is for the task description. The two 
-  buttons, Save Task and Back to Dashboard, are self-explanatory. Save Task confirms the addition of a new task and adds it to the Dashboard as an <li> in an unordered list. The Back 
+  buttons, Save Task and Back to Dashboard, are self-explanatory. Save Task confirms the addition of a new task and adds it to the Dashboard as an li tag in an unordered list. The Back 
   to Dashboard button is for the user's convenience in case they don't want to continue with the addition of their task.
 
   The user is directed to the Task Details Page when the actual task is clicked. This page is for the user to visualize what the task is. This page gives them the option to edit the task or delete the task. The Edit Task button has been set up to redirect them to the Task Form Page where they can make their edits and save the edits.
