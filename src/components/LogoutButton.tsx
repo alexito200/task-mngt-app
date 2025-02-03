@@ -17,8 +17,3 @@ return null;
 }
 
 export default LogoutButton;
-
-
-// button styling:
-// style={{backgroundColor: "#284361"}}
-// size="sm" className="px-5 btn btn-primary"
