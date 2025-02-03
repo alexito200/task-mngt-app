@@ -1,50 +1,28 @@
-# React + TypeScript + Vite
+Task Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TOC:
+- Homepage (Login Page)
+- Task Dashboard Page
+- Task Form Page
+- Task Details Page
 
-Currently, two official plugins are available:
+  Homepage (Login Page) is the first page that the user will see. The user will have to click on the login button which will take them to the Auth0 login page. Once logged in, it will 
+  take them to the Task Dashboard Page.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  The Task Dashboard Page is made up of a bootstrap card that includes two buttons, Add New Task and Logout. The Add New Task button will take the user to the Task Form Page while the    Logout button will log them out and redirect them back to the Homepage. After creating a new task, the user will be able to see their input in the form of a task in a list. This task 
+  will have a Mark Complete button next to it for their convenience. When the user clicks on the Mark Complete button, the program will put a strike-through decoration over the task.
 
-## Expanding the ESLint configuration
+  The Task Form Page is a bootstrap card made up of two text boxes and two buttons. The first text box is for the task title and the second is for the task description. The two 
+  buttons, Save Task and Back to Dashboard, are self-explanatory. Save Task confirms the addition of a new task and adds it to the Dashboard as an <li> in an unordered list. The Back 
+  to Dashboard button is for the user's convenience in case they don't want to continue with the addition of their task.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+  The user is directed to the Task Details Page when the actual task is clicked. This page is for the user to visualize what the task is. This page gives them the option to edit the task or delete the task. The Edit Task button has been set up to redirect them to the Task Form Page where they can make their edits and save the edits.
 
-- Configure the top-level `parserOptions` property like this:
+Installation:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Clone the repository:
 ```
+git clone https://github.com/your-username/task-mngt-app.git
+cd task-management-app
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
