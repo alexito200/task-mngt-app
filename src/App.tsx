@@ -1,6 +1,6 @@
 import TaskDashboard from './components/TaskDashboard';
 import TaskContextProvider from "./context/TaskProvider";
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import TaskDetails from './components/TaskDetails';
 import TaskForm from './components/TaskForm';
 import HomePage from "./components/HomePage";
@@ -26,7 +26,8 @@ const App: React.FC = () => {
           <Route path='/protected' element={<AuthenticationGuard component={ProtectedPage}/>} /> 
           <Route path='/task/:id' element={<TaskDetails />}/>
           <Route path='/task/new' element={<TaskForm />}/>
-          {/* <Route path='*' element={<Navigate to={'/'} />}/> */}
+          <Route path="/callback" element={<Navigate to="/dashboard" />} />
+          <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
     </TaskContextProvider>
     </>
