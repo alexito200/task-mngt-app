@@ -3,44 +3,44 @@ import { Auth0Provider } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
 
 type Auth0ProviderWithNavigateProps = {
-children: React.ReactNode;
+  children: React.ReactNode;
 };
 
 type AppState = {
-    returnTo?: string;
+  returnTo?: string;
 };
 
 const Auth0ProviderWithNavigate: React.FC<Auth0ProviderWithNavigateProps> = ({
-children,
+  children,
 }) => {
-const navigate = useNavigate();
-const domain = "dev-4515pnimc1tuvixu.us.auth0.com";
-const clientId = "qnMEv6Qhhhv7GVzR2hIO98CjeE69fe3W" ;
-const redirectUri = "http://localhost:5173/callback";
+  const navigate = useNavigate();
+  const domain = import.meta.env.VITE_AUTH0_DOMAIN;
+  const clientId = import.meta.env.VITE_AUTH0_CLIENT_ID;
+  const redirectUri = `${window.location.origin}/callback`; // Auto-adjust URL for environments
 
-const onRedirectCallback = (appState: AppState | undefined) => {
-    navigate(appState?.returnTo || window.location.pathname);
-};
+  const onRedirectCallback = (appState: AppState | undefined) => {
+    navigate(appState?.returnTo || "/dashboard"); // Redirect to dashboard instead of pathname
+  };
 
-if (!domain || !clientId || !redirectUri) {
+  if (!domain || !clientId) {
     console.error("Auth0 configuration is missing!");
     return null;
-}
+  }
 
-return (
+  return (
     <Auth0Provider
-    domain={domain}
-    clientId={clientId}
-    authorizationParams={{
+      domain={domain}
+      clientId={clientId}
+      authorizationParams={{
         redirect_uri: redirectUri,
         scope: "openid profile email",
-    }}
-    onRedirectCallback={onRedirectCallback}
-    cacheLocation="localstorage"
+      }}
+      onRedirectCallback={onRedirectCallback}
+      cacheLocation="localstorage"
     >
-    {children}
+      {children}
     </Auth0Provider>
-);
+  );
 };
 
 export default Auth0ProviderWithNavigate;
