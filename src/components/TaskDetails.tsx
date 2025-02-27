@@ -35,7 +35,7 @@ const TaskDetails = () => {
                 
                 {/* Back to Dashboard Button */}
                 <Link to={'/dashboard'}>
-                    <button type='button' className='btn btn-primary mx-2'>
+                    <button type='button' className='btn btn-secondary mx-2'>
                         Back to Dashboard
                     </button>
                 </Link>

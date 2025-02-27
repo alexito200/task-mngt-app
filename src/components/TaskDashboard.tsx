@@ -9,7 +9,7 @@ const TaskDashboard = () => {
 
     return (
         <div className="card dashboardCard text-center">
-            <h1 className="card-header">Task Dashboard</h1>
+            <h1 className="card-header">Task List</h1>
             
             <div className="card-body">
                 <div className="d-flex justify-content-center mb-3">
