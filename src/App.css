@@ -1,5 +1,12 @@
-/* HomePage Container */
-#container {
+/* General Page Styling */
+body {
+    background-color: #f4f4f9;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/*--------------------------------------------------- HomePage Container----------------------------------------------------------------- */
+#homeContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,17 +20,16 @@
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* General Page Styling */
-body {
-    background-color: #f4f4f9;
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
-/* Dashboard Card */
+/* ---------------------------------------------------Dashboard ---------------------------------------------------------*/
 .dashboardCard {
     max-width: 600px;
+    min-height: 800px;
     margin: 50px auto;
     background: white;
     border-radius: 12px;
@@ -31,7 +37,6 @@ body {
     padding: 20px;
 }
 
-/* Card Header */
 .card-header {
     font-size: 1.8rem;
     font-weight: bold;
@@ -41,24 +46,19 @@ body {
     border-radius: 12px 12px 0 0;
 }
 
-/* Card Body */
 .card-body {
     padding: 20px;
 }
 
-/* Responsive Image */
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
 
-/* Task List */
 ul {
     padding: 0;
     margin-top: 20px;
 }
-
+.task-link {
+    text-decoration: none;
+    color: black;
+}
 li {
     background: #ffffff;
     padding: 10px 15px;
@@ -75,7 +75,6 @@ li:hover {
     background: #f1f1f1;
 }
 
-/* Completed Task */
 li[style*="line-through"] {
     color: gray;
     opacity: 0.7;

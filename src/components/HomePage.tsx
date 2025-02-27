@@ -41,18 +41,18 @@ const HomePage: React.FC = () => {
   };
 
   return (
-    <div className="w-75 card mb-3" id="container">
+    <div className="w-75 card mb-3" id="homeContainer">
       <div className="row g-0 justify-content-end">
-        <div className="col-md-4">
+        <div className="col-md-6 imgContainer">
           <img
             src="/pattern.jpg"
             className="rounded-start"
-            style={{ width: "400px", height: "600px" }}
+            style={{ width: "600px", height: "600px" }}
             alt="image with pattern"
           />
         </div>
 
-        <div className="col-md-8">
+        <div className="col-md-6">
           <div className="card-body d-flex flex-column align-items-center">
             <h1 className="card-title">Welcome</h1>
             <p className="card-text">
